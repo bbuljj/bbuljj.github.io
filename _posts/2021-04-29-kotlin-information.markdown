@@ -2,6 +2,7 @@
 layout: post
 title:  "Kotlin의 기초"
 categories: kotlin
+tags: kotlin, function, class, enum, when
 ---
 
 - [Table Of Contents](#table-of-contents)
@@ -23,6 +24,8 @@ categories: kotlin
     + [Collection iteration](#collection-iteration)
 	
 ---
+
+# Kotlin 에 대해 알아보자
 
 ## 함수
 ### 메인 함수
