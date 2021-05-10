@@ -5,7 +5,6 @@ categories: kotlin
 tags: kotlin, class, object, interface
 ---
 
-# 인터페이스
 ## 인터페이스의 선언과 구현
  - 코틀린에서는 인터페이스 선언은 자바와 매우 비슷하다.
 {% highlight kotlin %}

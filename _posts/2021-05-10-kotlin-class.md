@@ -5,7 +5,6 @@ categories: kotlin
 tags: kotlin, class, object, interface
 ---
 
-# 클래스
 ## open, final, abstract
 ### open, final
  - `open`은 상속을 허용한다는 키워드이며, `final`은 상속을 허용하지 않는다.
