@@ -13,10 +13,10 @@ tags: jpa, querydsl
 @AllArgsConstructor
 @NoArgsConstructor
 public class ParentDto {
-    private UUID id;
-    private String name;
+  private UUID id;
+  private String name;
 
-    private List<ChildDto> children = new ArrayList<>();
+  private List<ChildDto> children = new ArrayList<>();
 }
 {% endhighlight %}
 
@@ -27,30 +27,31 @@ public class ParentDto {
 @AllArgsConstructor
 @NoArgsConstructor
 public class ChildDto {
-    private UUID id;
-    private int name;
+  private UUID id;
+  private int name;
 }
 {% endhighlight %}
 
  - 1:N DTO Projection Query 작성
 {% highlight java %}
 List<ParentDto> results = new JPAQueryFactory(em)
-	.from(parent)
-    .innerJoin(child)
-    .on(parent.id.eq(child.parent.id))
-    .transform(
-        groupBy(parent.id).list(
-            Projections.fields(
-                ParentDto.class,
-                parent.id,
-                parent.name,
-                list( // `GroupByExpression` 의 static method `list()`
-                    Projections.fields(
-                        ChildDto.class,
-                        child.id,
-                        child.name)
-                ).as("children")
-            )
-        )
-    );
+  .from(parent)
+  .innerJoin(child)
+  .on(parent.id.eq(child.parent.id))
+  .transform(
+    groupBy(parent.id).list(
+      Projections.fields(
+        ParentDto.class,
+        parent.id,
+        parent.name,
+        list( // `GroupByExpression` 의 static method `list()`
+          Projections.fields(
+            ChildDto.class,
+            child.id,
+            child.name
+          )
+        ).as("children")
+      )
+    )
+  );
 {% endhighlight %}
