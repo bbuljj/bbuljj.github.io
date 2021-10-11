@@ -6,7 +6,7 @@ tags: mysql architecture, mysql structure
 ---
 
 ## MySQL 구조
-![Mysql 구조]({{site.url}}/assets/images/db/mysql-structure.png)
+![Mysql 구조]({{site.url}}/assets/images/db/mysql-architecture.png)
 ## MySQL 엔진
 - 클라이언트 접속 / 쿼리 요청을 처리하는 커넥션 핸들러
 - SQL 파서, 전처리기 쿼리 최적화 실행을 위한 옵티마이저로 구성됨.
@@ -54,7 +54,7 @@ tags: mysql architecture, mysql structure
   - LRU, Flush, Free
 
 #### LRU (Least Recently Used) [LRU와 MRU 가 결합된 형태]
-- ![LRU 구조]({{site.url}}/assets/images/db/lru-strucuture.png)
+- ![LRU 구조]({{site.url}}/assets/images/db/innodb-lru.png)
 - LRU 의 목적은 디스크로부터 한번 읽어온 페이지를 최대한 오래 InnoDB 버퍼풀의 메모리에 상주시켜 디스크 읽기를 최소화하는 것이다.
 
 #### InnoDB 엔진에서 데이터를 찾는 과정
