@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "카프카 리벨런싱으로 인한 이슈 처리 과정"
+title:  "카프카 리벨런싱으로 인한 이슈 처리"
 categories: kafka
 tags: kafka
 ---
