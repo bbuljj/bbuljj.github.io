@@ -12,10 +12,10 @@ APM 경고와 함께 로그양이 증가되는 현상이 발생했습니다.
 이를 감지하고 컨테이너에 접속해서 로그를 확인한 결과(로그가 지속적으로 발생하여 APM web이 응답없음이 지속적으로 발생하여 어쩔수 없이 컨테이너에 직접 접속) `Kafka CommitException`이 발생하고 있었습니다.
 
 아래는 실제 발생한 로그입니다.
-```org.apache.kafka.clients.consumer.CommitFailedException: Commit cannot be completed since the group has already rebalanced and assigned the partitions to another member. This means that the time between subsequent calls to poll() was longer than the configured max.poll.interval.ms, which typically implies that the poll loop is spending too much time message processing. You can address this either by increasing max.poll.interval.ms or by reducing the maximum size of batches returned in poll() with max.poll.records.
+`org.apache.kafka.clients.consumer.CommitFailedException: Commit cannot be completed since the group has already rebalanced and assigned the partitions to another member. This means that the time between subsequent calls to poll() was longer than the configured max.poll.interval.ms, which typically implies that the poll loop is spending too much time message processing. You can address this either by increasing max.poll.interval.ms or by reducing the maximum size of batches returned in poll() with max.poll.records.
  at org.apache.kafka.clients.consumer.internals.ConsumerCoordinator.sendOffsetCommitRequest(ConsumerCoordinator.java:820) ~[kafka-clients
  ...
-```
+`
 
 
 ### 원인
